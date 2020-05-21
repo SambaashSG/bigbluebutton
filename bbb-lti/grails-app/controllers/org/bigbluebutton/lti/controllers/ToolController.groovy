@@ -354,13 +354,16 @@ class ToolController {
     }
 
     private List<Object> sanitizeThumbnails(Object format) {
+
+        def response = new ArrayList<Object>()
+
         if (format.preview == null || format.preview.images == null || format.preview.images.image == null) {
-            return new ArrayList()
+            return response
         }
-        if (format.preview.images.image instanceof Map<?,?>) {
-            return new ArrayList(format.preview.images.image)
-        }
-        return format.preview.images.image
+
+        response.add(format.preview.images.image)
+
+        return response
     }
 
     private String getCartridgeXML(){

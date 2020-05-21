@@ -14,7 +14,7 @@
         <script type="text/javascript" src="/lti/${assetPath(src: 'tool.js')}"></script>
     </head>
     <body>
-        <h1 style="margin-left:20px; text-align: center;"><a title="<g:message code="tool.view.join" />" class="btn btn-primary btn-large" href="${createLink(controller:'tool', action:'join', id: '0')}"><g:message code="tool.view.join" /></a></h1>
+        <h1 style="margin-left:20px; text-align: center;"><a title="<g:message code="tool.view.join" />" class="btn btn-primary btn-large"  target="_blank" href="${createLink(controller:'tool', action:'join', id: '0')}"><g:message code="tool.view.join" /></a></h1>
         <br><br>
         <div class="container">
         <table id="recordings" class="table table-striped table-bordered dt-responsive" width="100%">
@@ -49,11 +49,9 @@
                     <td class="cell c2" style="text-align:left;">${r.metadata.contextactivitydescription}</td>
                     <td class="cell c3" style="text-align:left;">
                     <g:if test="${r.published}">
-                        <div>
+                        <div>test
                         <g:each in="${r.thumbnails}" var="thumbnail">
-                            <g:each in="${thumbnail.content}" var="thumbnail_url">
-                                <img src="${thumbnail_url}" class="thumbnail"/>
-                            </g:each>
+                                <img src="${thumbnail.content}" class="thumbnail"/>
                         </g:each>
                         </div>
                   </g:if>
